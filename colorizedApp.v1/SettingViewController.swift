@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingViewController.swift
 //  colorizedApp.v1
 //
 //  Created by Артем Орлов on 07.02.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingViewController: UIViewController {
     
     @IBOutlet var mainView: UIView!
     
@@ -24,6 +24,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         mainView.layer.cornerRadius = 10
         
+        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        
+        redTextLabel.text = String(format: "%.2f", redSlider.value)
+        greenTextLabel.text = String(format: "%.2f", greenSlider.value)
+        blueTextLabel.text = String(format: "%.2f", blueSlider.value)
     }
     
     @IBAction func redSliderAction() {
