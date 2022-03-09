@@ -21,6 +21,7 @@
                     <navigationItem key="navigationItem" id="TOR-xI-mwP">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="qhu-ma-RIz">
                             <connections>
+                                <action selector="settingButtonNavBar:" destination="34H-sK-rcB" id="LWx-xG-z7C"/>
                                 <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="yjE-8j-qzV"/>
                             </connections>
                         </barButtonItem>
@@ -153,25 +154,29 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUP-Cc-YfJ">
-                                <rect key="frame" x="131" y="450" width="58.5" height="31"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUP-Cc-YfJ">
+                                <rect key="frame" x="111" y="444" width="109" height="43"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                <buttonConfiguration key="configuration" style="plain" title="Done" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="doneButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ee-hF-qSs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.26506877669748458" blue="0.60023356958762886" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X8A-sK-RbA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2nt-Sc-Qdq"/>
-                            <constraint firstItem="BUP-Cc-YfJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="131" id="71R-SX-1oX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BUP-Cc-YfJ" secondAttribute="trailing" constant="130.5" id="AcP-Ty-hs3"/>
                             <constraint firstItem="RYz-22-QDW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="LoF-4e-RPh"/>
+                            <constraint firstItem="BUP-Cc-YfJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="PfH-UX-7qj"/>
                             <constraint firstItem="RYz-22-QDW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="UxW-4L-ONf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BUP-Cc-YfJ" secondAttribute="bottom" constant="87" id="VYJ-hF-zdY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X8A-sK-RbA" secondAttribute="trailing" constant="16" id="Zcv-9O-Pe1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BUP-Cc-YfJ" secondAttribute="bottom" constant="81" id="kli-2I-4O6"/>
                             <constraint firstItem="X8A-sK-RbA" firstAttribute="top" secondItem="RYz-22-QDW" secondAttribute="bottom" constant="38" id="pbj-Dl-WFM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BUP-Cc-YfJ" secondAttribute="trailing" constant="100" id="qb8-SN-jHS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RYz-22-QDW" secondAttribute="trailing" constant="40" id="uFD-28-aKJ"/>
                         </constraints>
                     </view>

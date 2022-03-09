@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class SettingViewController: UIViewController {
     
     @IBOutlet var mainView: UIView!
@@ -23,14 +24,23 @@ class SettingViewController: UIViewController {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
      
+    var viewColorSetting: UIColor! {
+        didSet {
+            mainView.backgroundColor = viewColorSetting
+        }
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainView.layer.cornerRadius = 15
-        
+
        setColor()
-        
+
         setValue(for: redTextLabel, greenTextLabel, blueTextLabel)
+
+        setValueTextField(for: redTextField, greenTextField, blueTextField)
     }
     
     @IBAction func redSliderAction(_ sender: UISlider) {
@@ -55,6 +65,11 @@ class SettingViewController: UIViewController {
         }
     }
     
+    @IBAction func doneButton() {
+        dismiss(animated: true)
+
+    }
+    
     private func setColor() {
         mainView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
@@ -76,7 +91,21 @@ class SettingViewController: UIViewController {
         }
     }
     
+    private func setValueTextField(for textFields: UITextField...) {
+        textFields.forEach { textField in
+            switch textField {
+            case redTextField:
+                redTextField.text = string(from: redSlider)
+            case greenTextField:
+                greenTextField.text = string(from: greenSlider)
+            default:
+                blueTextField.text = string(from: blueSlider)
+            }
+        }
+    }
+    
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
 }
+
