@@ -23,21 +23,19 @@ class SettingViewController: UIViewController {
     @IBOutlet var redTextField: UITextField!
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
-     
-    var viewColorSetting: UIColor! {
-        didSet {
-            mainView.backgroundColor = viewColorSetting
-        }
-    }
-
-
+    
+    var viewColorSetting: UIColor!
+    
+    var delegate: SettingViewControllerDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        setColor()
+        mainView.backgroundColor = viewColorSetting
+        
         mainView.layer.cornerRadius = 15
-
-       setColor()
-
+        
         setValue(for: redTextLabel, greenTextLabel, blueTextLabel)
 
         setValueTextField(for: redTextField, greenTextField, blueTextField)
@@ -66,8 +64,8 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func doneButton() {
+        delegate.newSetColorView(mainView.backgroundColor!)
         dismiss(animated: true)
-
     }
     
     private func setColor() {
